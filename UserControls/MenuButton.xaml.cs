@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MahApps.Metro.IconPacks;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,37 @@ namespace WPFDashboard2.UserControls
     /// </summary>
     public partial class MenuButton : UserControl
     {
+        public static readonly DependencyProperty IconProperty = DependencyProperty.Register(
+            "Icon",
+            typeof(PackIconMaterialKind),
+            typeof(MenuButton)
+        );
+        public static readonly DependencyProperty IsActiveProperty = DependencyProperty.Register(
+            "IsActive",
+            typeof(PackIconMaterialKind),
+            typeof(MenuButton)
+        );
+        public PackIconMaterialKind Icon
+        {
+            get => (PackIconMaterialKind)GetValue(IconProperty); 
+            set => SetValue(IconProperty, value);
+        }
+
+        public bool IsActive
+        {
+            get
+            {
+                return (bool)GetValue(IconProperty);
+            }
+            set
+            {
+                SetValue(IsActiveProperty, value);
+            }
+        }
         public MenuButton()
         {
             InitializeComponent();
         }
+        
     }
 }
