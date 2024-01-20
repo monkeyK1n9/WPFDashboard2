@@ -5,8 +5,56 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFDashboard2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Height="760" Width="1280" ResizeMode="NoResize" AllowsTransparency="True"
+        WindowStyle="None" WindowStartupLocation="CenterScreen" Background="Transparent">
+    <Border
+        CornerRadius="25"
+        Background="#151F2d"
+        MouseDown="Border_MouseDown">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
 
-    </Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Border 
+                Grid.RowSpan="3"
+                Background="#1E2E44"
+                CornerRadius="25, 0, 0, 25">
+                <Grid>
+                    <StackPanel
+                        VerticalAlignment="Top">
+                        <!--Ellipses-->
+                        <StackPanel
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            Margin="0, 30, 0, 40">
+                            <Ellipse
+                                Width="0"
+                                Height="0"
+                                Fill="#EB1700"/>
+                            <Ellipse
+                                Width="0"
+                                Height="0"
+                                Fill="#FFAF01"
+                                Margin="7, 0"/>
+                            <Ellipse
+                                Width="0"
+                                Height="0"
+                                Fill="#009D00"/>
+                        </StackPanel>
+                        
+                        <!--Menu Buttons-->
+                        
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
 </Window>
