@@ -5,9 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPFDashboard2.UserControls"
              xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
-             d:DesignHeight="450" d:DesignWidth="800"
+             d:DesignWidth="100"
+             mc:Ignorable="d"
              Name="menuButton">
-    <Button>
+    <Button Style="{StaticResource menuButton}">
         <Grid ClipToBounds="True">
             <Ellipse
                 Width="100"
@@ -16,7 +17,7 @@
                 Margin="-190, -30, 0, 0">
                 <Ellipse.Style>
                     <Style TargetType="Ellipse">
-                        <Setter Property="Visibility" Value="Visible" />
+                        <Setter Property="Visibility" Value="{Binding Path=Tag, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}" />
 
                         <Style.Triggers>
                             <DataTrigger 
@@ -29,7 +30,7 @@
                 </Ellipse.Style>
             </Ellipse>
             
-            <iconPacks:PackIconMaterial Kind="Tea" />
+            <iconPacks:PackIconMaterial Kind="{Binding ElementName=menuButton, Path=Icon}" Style="{StaticResource menuButtonIcon}"/>
         </Grid>
 
     </Button>

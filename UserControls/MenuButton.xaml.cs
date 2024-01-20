@@ -28,7 +28,7 @@ namespace WPFDashboard2.UserControls
         );
         public static readonly DependencyProperty IsActiveProperty = DependencyProperty.Register(
             "IsActive",
-            typeof(PackIconMaterialKind),
+            typeof(bool),
             typeof(MenuButton)
         );
         public PackIconMaterialKind Icon
@@ -41,7 +41,7 @@ namespace WPFDashboard2.UserControls
         {
             get
             {
-                return (bool)GetValue(IconProperty);
+                return (bool)GetValue(IsActiveProperty);
             }
             set
             {

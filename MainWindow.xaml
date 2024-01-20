@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFDashboard2"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:userControls="clr-namespace:WPFDashboard2.UserControls"
         mc:Ignorable="d"
         Height="760" Width="1280" ResizeMode="NoResize" AllowsTransparency="True"
         WindowStyle="None" WindowStartupLocation="CenterScreen" Background="Transparent">
@@ -23,6 +25,7 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
+            <!--Left menu sidebar-->
             <Border 
                 Grid.RowSpan="3"
                 Background="#1E2E44"
@@ -51,10 +54,22 @@
                         </StackPanel>
                         
                         <!--Menu Buttons-->
-                        
+                        <userControls:MenuButton Icon="HomeVariant" IsActive="True" />
+                        <userControls:MenuButton Icon="Finance" />
+                        <userControls:MenuButton Icon="CommentMultipleOutline" />
+                        <userControls:MenuButton Icon="AccountSearchOutline" />
+                        <userControls:MenuButton Icon="BookSyncOutline" />
+                        <userControls:MenuButton Icon="AlertCircleCheckOutline" />
+                        <userControls:MenuButton Icon="CogOutline" />
                     </StackPanel>
+
+                    <userControls:MenuButton Icon="Power" VerticalAlignment="Bottom" Margin="0, 0, 0, 15" />
                 </Grid>
             </Border>
+                
+            <!--Top menu-->
+                
+            <!--Content view-->
         </Grid>
     </Border>
 </Window>
