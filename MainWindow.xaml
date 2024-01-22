@@ -93,7 +93,8 @@
                         Visibility="{Binding ElementName=textBox, Path=Text.IsEmpty, Converter={StaticResource boolToVisibility}}"/>
 
                     <TextBox
-                        x:Name="textBox"/>
+                        x:Name="textBox"
+                        Style="{StaticResource searchTextBox}"/>
 
                     <iconPacks:PackIconMaterial 
                         Kind="Magnify"
@@ -101,7 +102,8 @@
                         Height="15"
                         Foreground="#9EA4AD"
                         Margin="15, 0, 0, 0"
-                        HorizontalAlignment="Left"/>
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"/>
 
                 </Grid>
             </Grid>
