@@ -9,6 +9,11 @@
         mc:Ignorable="d"
         Height="760" Width="1280" ResizeMode="NoResize" AllowsTransparency="True"
         WindowStyle="None" WindowStartupLocation="CenterScreen" Background="Transparent">
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="boolToVisibility" />
+    </Window.Resources>
+    
     <Border
         CornerRadius="25"
         Background="#151F2d"
@@ -68,7 +73,39 @@
             </Border>
                 
             <!--Top menu-->
+            <Grid 
+                Grid.Column="1"
+                Margin="30">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
                 
+                <!--Search text box-->
+                <Grid>
+                    <TextBlock
+                        Margin="40, 0, 15, 0"
+                        VerticalAlignment="Center"
+                        Foreground="#9EA4AD" 
+                        Panel.ZIndex="1"
+                        IsHitTestVisible="False"
+                        Text="Search here..."
+                        Visibility="{Binding ElementName=textBox, Path=Text.IsEmpty, Converter={StaticResource boolToVisibility}}"/>
+
+                    <TextBox
+                        x:Name="textBox"/>
+
+                    <iconPacks:PackIconMaterial 
+                        Kind="Magnify"
+                        Width="15"
+                        Height="15"
+                        Foreground="#9EA4AD"
+                        Margin="15, 0, 0, 0"
+                        HorizontalAlignment="Left"/>
+
+                </Grid>
+            </Grid>
+            
             <!--Content view-->
         </Grid>
     </Border>
