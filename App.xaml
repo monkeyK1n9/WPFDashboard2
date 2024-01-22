@@ -93,5 +93,43 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <Style
+            x:Key="topMenuButton"
+            TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Width" Value="45"/>
+            <Setter Property="Height" Value="45"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="Margin" Value="3, 0"/>
+            <Setter Property="Tag" Value="Hidden"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border 
+                            Background="{TemplateBinding Background}"
+                            CornerRadius="50">
+                            <ContentPresenter
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <Trigger 
+             Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="#1E2E44" />
+                </Trigger>
+
+                <DataTrigger 
+             Binding="{Binding ElementName=menuButton, Path=IsActive}" 
+             Value="True">
+                    <Setter Property="Foreground" Value="#7368FF" />
+                    <Setter Property="Tag" Value="Visible" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
     </Application.Resources>
 </Application>

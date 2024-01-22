@@ -108,6 +108,15 @@
                 </Grid>
             </Grid>
             
+            <!--Buttons-->
+            <StackPanel 
+                Orientation="Horizontal"
+                Grid.Column="1"
+                Margin="20, 0, 0, 0">
+                <Button>
+                    <iconPacks:PackIconMaterial Kind="Bell" />
+                </Button>
+            </StackPanel>
             <!--Content view-->
         </Grid>
     </Border>
