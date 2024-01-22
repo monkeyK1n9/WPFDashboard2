@@ -133,5 +133,13 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Foreground" Value="#EDEEEE"/>
         </Style>
+
+        <Style
+            x:Key="mainBorder"
+            TargetType="Border">
+            <Setter Property="Background" Value="#1E2E44" />
+            <Setter Property="Padding" Value="20" />
+            <Setter Property="CornerRadius" Value="10"/>
+        </Style>
     </Application.Resources>
 </Application>
