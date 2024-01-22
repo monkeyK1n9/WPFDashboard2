@@ -102,7 +102,6 @@
             <Setter Property="Height" Value="45"/>
             <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
             <Setter Property="Margin" Value="3, 0"/>
-            <Setter Property="Tag" Value="Hidden"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -119,17 +118,20 @@
 
             <Style.Triggers>
                 <Trigger 
-             Property="IsMouseOver" Value="True">
+                    Property="IsMouseOver" Value="True">
                     <Setter Property="Foreground" Value="#1E2E44" />
                 </Trigger>
-
-                <DataTrigger 
-             Binding="{Binding ElementName=menuButton, Path=IsActive}" 
-             Value="True">
-                    <Setter Property="Foreground" Value="#7368FF" />
-                    <Setter Property="Tag" Value="Visible" />
-                </DataTrigger>
             </Style.Triggers>
+        </Style>
+
+        <Style
+            x:Key="topMenuButtonIcon"
+            TargetType="iconPacks:PackIconMaterial">
+            <Setter Property="Width" Value="15" />
+            <Setter Property="Height" Value="15" />
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="#EDEEEE"/>
         </Style>
     </Application.Resources>
 </Application>

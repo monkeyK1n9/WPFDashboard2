@@ -106,18 +106,44 @@
                         VerticalAlignment="Center"/>
 
                 </Grid>
+            
+                <!--Buttons-->
+                <StackPanel 
+                    Orientation="Horizontal"
+                    Grid.Column="1"
+                    Margin="20, 0, 0, 0">
+                
+                    <Button Style="{StaticResource topMenuButton}">
+                        <iconPacks:PackIconMaterial Kind="Bell" Style="{StaticResource topMenuButtonIcon}" />
+                    </Button>
+                
+                    <Button Style="{StaticResource topMenuButton}">
+                        <iconPacks:PackIconMaterial Kind="Bookmark" Style="{StaticResource topMenuButtonIcon}" />
+                    </Button>
+                
+                    <Button Style="{StaticResource topMenuButton}">
+                        <iconPacks:PackIconMaterial Kind="Account" Style="{StaticResource topMenuButtonIcon}" />
+                    </Button>
+                </StackPanel>
             </Grid>
             
-            <!--Buttons-->
-            <StackPanel 
-                Orientation="Horizontal"
-                Grid.Column="1"
-                Margin="20, 0, 0, 0">
-                <Button>
-                    <iconPacks:PackIconMaterial Kind="Bell" />
-                </Button>
-            </StackPanel>
             <!--Content view-->
+            <!--Middle Top section-->
+            <Grid 
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="20, 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                
+                <!--Info Cards Left-->
+                
+                <!--Info Cards Right-->
+                
+            </Grid>
         </Grid>
     </Border>
 </Window>
