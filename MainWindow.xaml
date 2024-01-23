@@ -140,9 +140,37 @@
                 </Grid.ColumnDefinitions>
                 
                 <!--Info Cards Left-->
+                <StackPanel Margin="10, 0">
+                    <userControls:InfoCard 
+                        Number="18"
+                        Title="Average Days to Hire"
+                        IsTechnical="True"
+                        IsActive="True" />
+                    <userControls:InfoCard 
+                        Number="54"
+                        Title="Average Days to Fill"
+                        IsTechnical="True" />
+                    <userControls:InfoCard 
+                        Number="98"
+                        Title="Offer Acceptance Rate"
+                        IsTechnical="True" />
+                </StackPanel>
                 
                 <!--Info Cards Right-->
-                
+                <StackPanel Margin="10, 0" Grid.Column="1">
+                    <userControls:InfoCard 
+                        Number="23"
+                        Title="Average Days to Hire"
+                        IsTechnical="False" />
+                    <userControls:InfoCard 
+                        Number="27"
+                        Title="Average Days to Fill"
+                        IsTechnical="False" />
+                    <userControls:InfoCard 
+                        Number="99"
+                        Title="Offer Acceptance Rate"
+                        IsTechnical="False" />
+                </StackPanel>
             </Grid>
         </Grid>
     </Border>
