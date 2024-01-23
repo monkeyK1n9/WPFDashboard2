@@ -91,7 +91,7 @@
                         Panel.ZIndex="1"
                         IsHitTestVisible="False"
                         Text="Search here..."
-                        Visibility="{Binding ElementName=textBox, Path=Text.IsEmpty, Converter={StaticResource boolToVisibility}}"/>
+                        Visibility="{Binding ElementName=textBox, Path=Text, Converter={StaticResource boolToVisibility}}"/>
 
                     <TextBox
                         x:Name="textBox"
@@ -221,7 +221,7 @@
                         <!--Cost Chart-->
                         <lvc:CartesianChart
                             LegendLocation="None"
-                            Margin="0, 40, 0, 0" Loaded="CartesianChart_Loaded">
+                            Margin="0, 40, 0, 0" >
                             <lvc:CartesianChart.DataTooltip>
                                 <lvc:DefaultTooltip
                                     Background="#24336A"
@@ -305,8 +305,7 @@
                         <!--Hire chart-->
                         <lvc:CartesianChart
                             LegendLocation="None"
-                            Margin="0, 40, 0, 0" 
-                            Loaded="CartesianChart_Loaded">
+                            Margin="0, 40, 0, 0">
                             <lvc:CartesianChart.DataTooltip>
                                 <lvc:DefaultTooltip
                                     Background="#101A28"
@@ -371,7 +370,14 @@
                             BorderThickness="0"
                             ScrollViewer.HorizontalScrollBarVisibility="Hidden"
                             ScrollViewer.VerticalScrollBarVisibility="Hidden">
-                            
+
+                            <userControls:CountryListItem CountryName="Cameroon" Flag="/Images/cameroon.png" Price="500 000 XAF" IsLevelUp="True" />
+                            <!--<userControls:CountryListItem CountryName="Ivory Coast" Flag="/Images/ivorycoast.png" Price="430 000 XAF" IsLevelUp="False" />
+                            <!--<userControls:CountryListItem CountryName="Senegal" Flag="/Images/senegal.png" Price="375 000 XAF" IsLevelUp="True" />
+                            <!--<userControls:CountryListItem CountryName="Nigeria" Flag="/Images/nigeria.png" Price="300 000 XAF" IsLevelUp="False" />
+                            <!--<userControls:CountryListItem CountryName="Congo" Flag="/Images/congo.png" Price="263 000 XAF" IsLevelUp="False" />
+
+
                         </ListView>
                     </Grid>
                 </Border>

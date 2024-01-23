@@ -5,8 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPFDashboard2.UserControls"
              xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
-             x:Name="country">
-    <ListViewItem Style="{DynamicResource ListViewItemStyle}" BorderThickness="0, 1, 0, 0" BorderBrush="#2C3A54" Padding="0, 10">
+             Name="countryListItem">
+    <ListViewItem Style="{DynamicResource ListViewItemStyle1}" BorderThickness="0, 1, 0, 0" BorderBrush="#2C3A54" Padding="0, 10">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
@@ -17,19 +17,19 @@
             </Grid.ColumnDefinitions>
 
             <Image
-                Source="{Binding ElementName=country, Path=Flag}"
+                Source="{Binding ElementName=countryListItem, Path=Flag}"
                 Width="10"
                 Height="10"
                 Stretch="Fill"
                 Margin="2, 0, 0, 0"/>
             <TextBlock
-                Text="{Binding ElementName=country, Path=CountryName}"
+                Text="{Binding ElementName=countryListItem, Path=CountryName}"
                 Grid.Column="1"
                 Foreground="#EFEFEF"
                 Margin="20, 0, 0, 0"
                 VerticalAlignment="Center"/>
             <TextBlock
-                Text="{Binding ElementName=country, Path=Price}"
+                Text="{Binding ElementName=countryListItem, Path=Price}"
                 Grid.Column="2"
                 Foreground="#B1B6BD"
                 Margin="10, 0, 0, 0"
@@ -46,12 +46,12 @@
                         <Setter Property="Foreground" Value="#19DC2D" />
 
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding ElementName=country, Path=IsLevelUp}" Value="True">
+                            <DataTrigger Binding="{Binding ElementName=countryListItem, Path=IsLevelUp}" Value="True">
                                 <Setter Property="Kind" Value="ArrowRightTop" />
                                 <Setter Property="Foreground" Value="#19DC2D" />
                             </DataTrigger>
 
-                            <DataTrigger Binding="{Binding ElementName=country, Path=IsLevelUp}" Value="False">
+                            <DataTrigger Binding="{Binding ElementName=countryListItem, Path=IsLevelUp}" Value="False">
                                 <Setter Property="Kind" Value="ArrowRightBottom" />
                                 <Setter Property="Foreground" Value="#F72353" />
                             </DataTrigger>
