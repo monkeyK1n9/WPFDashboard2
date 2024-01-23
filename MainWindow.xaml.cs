@@ -28,4 +28,11 @@ public partial class MainWindow : Window
             this.DragMove();
         }
     }
+
+    private void MenuButton_MouseDown(object sender, MouseButtonEventArgs e)
+    {
+        Console.WriteLine("Shutting down...");
+        App.Current.Shutdown();
+        Console.WriteLine("Shutting successful");
+    }
 }

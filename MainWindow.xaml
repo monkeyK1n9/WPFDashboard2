@@ -69,7 +69,7 @@
                         <userControls:MenuButton Icon="CogOutline" />
                     </StackPanel>
 
-                    <userControls:MenuButton Icon="Power" VerticalAlignment="Bottom" Margin="0, 0, 0, 15" />
+                    <userControls:MenuButton Icon="Power" VerticalAlignment="Bottom" Margin="0, 0, 0, 15" MouseDown="MenuButton_MouseDown" />
                 </Grid>
             </Border>
                 
@@ -372,10 +372,10 @@
                             ScrollViewer.VerticalScrollBarVisibility="Hidden">
 
                             <userControls:CountryListItem CountryName="Cameroon" Flag="/Images/cameroon.png" Price="500 000 XAF" IsLevelUp="True" />
-                            <!--<userControls:CountryListItem CountryName="Ivory Coast" Flag="/Images/ivorycoast.png" Price="430 000 XAF" IsLevelUp="False" />
-                            <!--<userControls:CountryListItem CountryName="Senegal" Flag="/Images/senegal.png" Price="375 000 XAF" IsLevelUp="True" />
-                            <!--<userControls:CountryListItem CountryName="Nigeria" Flag="/Images/nigeria.png" Price="300 000 XAF" IsLevelUp="False" />
-                            <!--<userControls:CountryListItem CountryName="Congo" Flag="/Images/congo.png" Price="263 000 XAF" IsLevelUp="False" />
+                            <!--<userControls:CountryListItem CountryName="Ivory Coast" Flag="/Images/ivorycoast.png" Price="430 000 XAF" IsLevelUp="False" /> -->
+                            <!--<userControls:CountryListItem CountryName="Senegal" Flag="/Images/senegal.png" Price="375 000 XAF" IsLevelUp="True" /> -->
+                            <!--<userControls:CountryListItem CountryName="Nigeria" Flag="/Images/nigeria.png" Price="300 000 XAF" IsLevelUp="False" /> -->
+                            <!--<userControls:CountryListItem CountryName="Congo" Flag="/Images/congo.png" Price="263 000 XAF" IsLevelUp="False" /> -->
 
 
                         </ListView>
