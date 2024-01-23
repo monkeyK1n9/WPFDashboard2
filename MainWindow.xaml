@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:WPFDashboard2"
         xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:userControls="clr-namespace:WPFDashboard2.UserControls"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         mc:Ignorable="d"
         Height="760" Width="1280" ResizeMode="NoResize" AllowsTransparency="True"
         WindowStyle="None" WindowStartupLocation="CenterScreen" Background="Transparent">
@@ -180,12 +181,198 @@
                     <Grid>
                         <!--Title-->
                         <TextBlock
-                            Text="Recruitement Costs XAF" />
+                            Text="Recruitement Costs XAF"
+                            Style="{StaticResource titleText}"/>
                         
                         <!--Filter Button-->
-                        <Button>
-                            <iconPacks:PackIconMaterial Kind="Tune" />
+                        <Button Style="{StaticResource titleButton}" Margin="0, -3, 0, 0">
+                            <iconPacks:PackIconMaterial Kind="Tune" Style="{StaticResource topMenuButtonIcon}"/>
                         </Button>
+                        
+                        <!--Legends-->
+                        <StackPanel
+                            Orientation="Horizontal"
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Right"
+                            Margin="0, 45, 0, 0">
+                            <Border
+                                Width="12"
+                                Height="12"
+                                Background="#7166F9"
+                                CornerRadius="3" />
+                            <TextBlock
+                                Text="Marketing"
+                                VerticalAlignment="Center"
+                                Margin="7, 0, 20, 0"
+                                Foreground="#D4D6D9" />
+
+                            <Border
+                                Width="12"
+                                Height="12"
+                                Background="#101A28"
+                                CornerRadius="3" />
+                            <TextBlock
+                                Text="Cases Sales"
+                                VerticalAlignment="Center"
+                                Margin="7, 0, 20, 0"
+                                Foreground="#D4D6D9" />
+                        </StackPanel>
+                        
+                        <!--Cost Chart-->
+                        <lvc:CartesianChart
+                            LegendLocation="None"
+                            Margin="0, 40, 0, 0" Loaded="CartesianChart_Loaded">
+                            <lvc:CartesianChart.DataTooltip>
+                                <lvc:DefaultTooltip
+                                    Background="#24336A"
+                                    Foreground="#D5E2FF"/>
+                            </lvc:CartesianChart.DataTooltip>
+
+                            <lvc:CartesianChart.AxisX>
+                                <lvc:Axis Foreground="#BCC0C6"
+                                          ShowLabels="True"
+                                          Labels="Jan,Feb,Mar,Apr,May,Jun,Jul,Aug">
+                                    <lvc:Axis.Separator>
+                                        <lvc:Separator StrokeThickness="0" Step="1" />
+                                    </lvc:Axis.Separator>
+                                </lvc:Axis>
+                            </lvc:CartesianChart.AxisX>
+
+                            <lvc:CartesianChart.AxisY>
+                                <lvc:Axis Foreground="#BCC0C6"
+                                      ShowLabels="True"
+                                      MinValue="0"
+                                      MaxValue="30">
+                                    <lvc:Axis.Separator>
+                                        <lvc:Separator StrokeThickness="0" />
+                                    </lvc:Axis.Separator>
+                                </lvc:Axis>
+                            </lvc:CartesianChart.AxisY>
+
+                            <lvc:CartesianChart.Series>
+                                <lvc:ColumnSeries
+                                    Fill="#7166F9"
+                                    MaxColumnWidth="15"
+                                    Values="11, 13, 17, 20, 17, 15, 16, 13" />
+                                <lvc:ColumnSeries
+                                    Fill="#7166F9"
+                                    MaxColumnWidth="15"
+                                    Values="6, 5, 6, 4, 6, 6, 7, 6" />
+                            </lvc:CartesianChart.Series>
+                        </lvc:CartesianChart>
+                    </Grid>
+                </Border>
+            </Grid>
+            
+            <!--Middle Bottom Section-->
+            <Grid Grid.Row="2" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="450" />
+                </Grid.ColumnDefinitions>
+                
+                <!--Hire Section-->
+                <Border Style="{StaticResource mainBorder}" Margin="30, 0, 20, 30">
+                    <Grid>
+                        <!--Title-->
+                        <TextBlock
+                            Text="Top Hiring Sources"
+                            Style="{StaticResource titleText}" />
+
+                        <!--Filter Button-->
+                        <Button Style="{StaticResource titleButton}">
+                            <iconPacks:PackIconMaterial Kind="Tune" Style="{StaticResource topMenuButtonIcon}"/>
+                        </Button>
+
+                        <!--Legends-->
+                        <StackPanel
+                             Orientation="Horizontal"
+                             VerticalAlignment="Top"
+                             HorizontalAlignment="Right"
+                             Margin="0, 8, 40, 0">
+                            <Border
+                                 Width="12"
+                                 Height="12"
+                                 Background="#7166F9"
+                                 CornerRadius="3" />
+                            <TextBlock
+                                 Text="Marketing"
+                                 VerticalAlignment="Center"
+                                 Margin="7, 0, 20, 0"
+                                 Foreground="#D4D6D9" />
+                        </StackPanel>
+                        
+                        <!--Hire chart-->
+                        <lvc:CartesianChart
+                            LegendLocation="None"
+                            Margin="0, 40, 0, 0" 
+                            Loaded="CartesianChart_Loaded">
+                            <lvc:CartesianChart.DataTooltip>
+                                <lvc:DefaultTooltip
+                                    Background="#101A28"
+                                    Foreground="#D5E2FF"/>
+                            </lvc:CartesianChart.DataTooltip>
+
+                            <lvc:CartesianChart.AxisX>
+                                <lvc:Axis Foreground="#BCC0C6"
+                                    ShowLabels="True"
+                                    Labels="LinkedIn, Instagram, Facebook, Twitter, Indeed, WelcomeToTheJungle">
+                                    <lvc:Axis.Separator>
+                                        <lvc:Separator StrokeThickness="0" Step="4" />
+                                    </lvc:Axis.Separator>
+                                </lvc:Axis>
+                            </lvc:CartesianChart.AxisX>
+
+                            <lvc:CartesianChart.AxisY>
+                                <lvc:Axis Foreground="#BCC0C6"
+                                    ShowLabels="True"
+                                    MinValue="0"
+                                    MaxValue="100">
+                                    <lvc:Axis.Separator>
+                                        <lvc:Separator StrokeThickness="1" Stroke="#2C3A54" />
+                                    </lvc:Axis.Separator>
+                                </lvc:Axis>
+                            </lvc:CartesianChart.AxisY>
+
+                            <lvc:CartesianChart.Series>
+                                <lvc:LineSeries 
+                                    StrokeThickness="2" 
+                                    Stroke="#6860E6" 
+                                    PointGeometrySize="0">
+                                    <lvc:LineSeries.Fill>
+                                        <LinearGradientBrush>
+                                            <GradientStop Color="#2A3966" Offset="0.4" />
+                                            <GradientStop Color="#21304A" Offset="1.2" />
+                                        </LinearGradientBrush>
+                                    </lvc:LineSeries.Fill>
+                                </lvc:LineSeries>
+                            </lvc:CartesianChart.Series>
+                        </lvc:CartesianChart>
+                    </Grid>
+                </Border>
+            
+                <!--Country Section-->
+                <Border Style="{StaticResource mainBorder}" Margin="0, 0, 30, 30" Grid.Column="1">
+                    <Grid>
+                        <!--Title-->
+                        <TextBlock
+                            Text="Top Countries"
+                            Style="{StaticResource titleText}" />
+
+                        <!--Filter Button-->
+                        <Button Style="{StaticResource titleButton}" Margin="0, -3, 0, 0">
+                            <iconPacks:PackIconMaterial Kind="Tune" Style="{StaticResource topMenuButtonIcon}"/>
+                        </Button>
+                        
+                        <!--Countries List View-->
+                        <ListView 
+                            Margin="0, 50, 0, 0" 
+                            Background="Transparent"
+                            BorderThickness="0"
+                            ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                            ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                            
+                        </ListView>
                     </Grid>
                 </Border>
             </Grid>
