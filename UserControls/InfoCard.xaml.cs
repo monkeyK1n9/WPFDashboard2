@@ -26,11 +26,41 @@ namespace WPFDashboard2.UserControls
             typeof(string),
             typeof(InfoCard)
         );
+        public static readonly DependencyProperty NumberProperty = DependencyProperty.Register(
+            "Number",
+            typeof(string),
+            typeof(InfoCard)
+        );
+        public static readonly DependencyProperty IsActiveProperty = DependencyProperty.Register(
+            "IsActive",
+            typeof(bool),
+            typeof(InfoCard)
+        );
+        public static readonly DependencyProperty IsTechnicalProperty = DependencyProperty.Register(
+            "IsTechnical",
+            typeof(bool),
+            typeof(InfoCard)
+        );
 
         public string Title
         {
             get => (string)GetValue(TitleProperty);
             set => SetValue(TitleProperty, value);
+        }
+        public string Number
+        {
+            get => (string)GetValue(NumberProperty);
+            set => SetValue(NumberProperty, value);
+        }
+        public bool IsActive
+        {
+            get => (bool)GetValue(IsActiveProperty);
+            set => SetValue(IsActiveProperty, value);
+        }
+        public bool IsTechnical
+        {
+            get => (bool)GetValue(IsTechnicalProperty);
+            set => SetValue(IsTechnicalProperty, value);
         }
         public InfoCard()
         {
